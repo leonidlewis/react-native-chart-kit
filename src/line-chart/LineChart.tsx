@@ -382,7 +382,7 @@ class LineChart extends AbstractChart<LineChartProps, LineChartState> {
 
       if (index >= data[0].data.length - 1) {
         this.label.current.setNativeProps({
-          text: scrollableInfoTextDecorator(Math.floor(data[0].data[0]))
+          text: scrollableInfoTextDecorator(data[0].data[0])
         });
       } else {
         if (index > lastIndex) {
@@ -394,14 +394,14 @@ class LineChart extends AbstractChart<LineChartProps, LineChartState> {
             let rest = prev - base;
             this.label.current.setNativeProps({
               text: scrollableInfoTextDecorator(
-                Math.floor(base + percent * rest)
+               base + percent * rest
               )
             });
           } else {
             let rest = base - prev;
             this.label.current.setNativeProps({
               text: scrollableInfoTextDecorator(
-                Math.floor(base - percent * rest)
+                base - percent * rest
               )
             });
           }
@@ -415,14 +415,14 @@ class LineChart extends AbstractChart<LineChartProps, LineChartState> {
             let rest = next - base;
             this.label.current.setNativeProps({
               text: scrollableInfoTextDecorator(
-                Math.floor(base + percent * rest)
+               base + percent * rest
               )
             });
           } else {
             let rest = base - next;
             this.label.current.setNativeProps({
               text: scrollableInfoTextDecorator(
-                Math.floor(base - percent * rest)
+                base - percent * rest
               )
             });
           }
@@ -510,7 +510,7 @@ class LineChart extends AbstractChart<LineChartProps, LineChartState> {
             onLayout={() => {
               this.label.current.setNativeProps({
                 text: scrollableInfoTextDecorator(
-                  Math.floor(data[0].data[data[0].data.length - 1])
+                  data[0].data[data[0].data.length - 1]
                 )
               });
             }}

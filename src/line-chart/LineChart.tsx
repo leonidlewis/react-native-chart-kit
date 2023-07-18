@@ -393,16 +393,12 @@ class LineChart extends AbstractChart<LineChartProps, LineChartState> {
           if (prev > base) {
             let rest = prev - base;
             this.label.current.setNativeProps({
-              text: scrollableInfoTextDecorator(
-               base + percent * rest
-              )
+              text: scrollableInfoTextDecorator(base)
             });
           } else {
             let rest = base - prev;
             this.label.current.setNativeProps({
-              text: scrollableInfoTextDecorator(
-                base - percent * rest
-              )
+              text: scrollableInfoTextDecorator(base)
             });
           }
         } else {
@@ -414,16 +410,12 @@ class LineChart extends AbstractChart<LineChartProps, LineChartState> {
           if (next > base) {
             let rest = next - base;
             this.label.current.setNativeProps({
-              text: scrollableInfoTextDecorator(
-               base + percent * rest
-              )
+              text: scrollableInfoTextDecorator(base)
             });
           } else {
             let rest = base - next;
             this.label.current.setNativeProps({
-              text: scrollableInfoTextDecorator(
-                base - percent * rest
-              )
+              text: scrollableInfoTextDecorator(base)
             });
           }
         }
